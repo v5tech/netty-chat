@@ -62,21 +62,21 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         channels.add(ctx.channel());
     }
 
-    /**
-     * 处理客户端上线，在handlerAdded之后调用
-     * @param ctx
-     * @throws Exception
-     */
-//    @Override
-//    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-//        Channel incoming = ctx.channel();
-//        // 在服务器端控制台打印客户端上线信息
-//        System.out.println("[CLIENT] - " + incoming.remoteAddress() + "上线了...");
-//        // 给所有在线客户端发送上线广播
-//		for (Channel channel : channels) {
-//			channel.writeAndFlush("[系统消息] - " + incoming.remoteAddress() + "上线了\n");
-//        }
-//    }
+    // /**
+    //  * 处理客户端上线，在handlerAdded之后调用
+    //  * @param ctx
+    //  * @throws Exception
+    //  */
+    // @Override
+    // public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    //    Channel incoming = ctx.channel();
+    //    // 在服务器端控制台打印客户端上线信息
+    //    System.out.println("[CLIENT] - " + incoming.remoteAddress() + "上线了...");
+    //    // 给所有在线客户端发送上线广播
+    //     for (Channel channel : channels) {
+    //         channel.writeAndFlush("[系统消息] - " + incoming.remoteAddress() + "上线了\n");
+    //    }
+    // }
 
     /**
      * 处理客户端下线，在handlerRemoved之前调用
@@ -95,24 +95,24 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         }
     }
 
-    /**
-     * 在channelInactive方法之后调用
-     * @param ctx
-     * @throws Exception
-     */
-//    @Override
-//    public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-//        Channel incoming = ctx.channel();
-//        // 在服务器端控制台打印客户端掉线信息
-//        System.out.println("[CLIENT] - " + incoming.remoteAddress() + "掉线了...");
-//        // 给所有在线客户端发送掉线广播
-//        for (Channel channel : channels) {
-//            channel.writeAndFlush("[系统消息] - " + incoming.remoteAddress() + "掉线了\n");
-//        }
-//
-//        // A closed Channel is automatically removed from ChannelGroup,
-//        // so there is no need to do "channels.remove(ctx.channel());"
-//    }
+    //  /**
+    //   * 在channelInactive方法之后调用
+    //   * @param ctx
+    //   * @throws Exception
+    //   */
+    // @Override
+    // public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
+    //     Channel incoming = ctx.channel();
+    //     // 在服务器端控制台打印客户端掉线信息
+    //     System.out.println("[CLIENT] - " + incoming.remoteAddress() + "掉线了...");
+    //     // 给所有在线客户端发送掉线广播
+    //     for (Channel channel : channels) {
+    //         channel.writeAndFlush("[系统消息] - " + incoming.remoteAddress() + "掉线了\n");
+    //     }
+    //
+    //     // A closed Channel is automatically removed from ChannelGroup,
+    //     // so there is no need to do "channels.remove(ctx.channel());"
+    // }
 
 
     /**
